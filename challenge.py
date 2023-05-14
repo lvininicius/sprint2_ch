@@ -1,4 +1,5 @@
 
+dados=None
 def opcao1():
     
     global dados
@@ -9,15 +10,16 @@ def opcao1():
     b = str(input("Digite a rua do Reciclador: "))
     c = str(input("Digite a cidade: "))
     print("## Reciclador registrado ##")
-    dados=[c,b]
+    dados=[a,c,b]
     
 
 def opcao2(dados):
     
     import requests
     
-    b,c = dados
+    a,b,c = dados
     print("Você selecionou a opção 2.")
+    print("Buscando reciclador...")
 
     # URL da API do OpenStreetMap para obter as coordenadas geográficas a partir do endereço
     url = 'https://nominatim.openstreetmap.org/search?q={b},{c}&format=json&limit=1'
@@ -52,19 +54,22 @@ def opcao2(dados):
     plt.title("Locais em São Paulo")
     plt.show()
 
-def opcao3():
-    
-    print("Você selecionou a opção 3.")
-    # Coloque os comandos relacionados à opção 3 aqui
+def opcao3(dados):
+   
+    if dados:
+        a,b,c= dados
+        opcao3(a,b,c)
+    else:
+        print("Nenhum reciclador registrado.")
 
 while  True:
-    print("_____________________________")
+    print("_____________________________________")
     print("Selecione uma opção:")
     print("1. Registrar um reciclador")
-    print("2. Localizar um reciclador")
-    print("3. Opção 3")
+    print("2. Localizar o reciclador registrado")
+    print("3. Exibir o log de opções escolhihas")
     print("4. Sair")
-    print("_____________________________")
+    print("_____________________________________")
 
     opcao = input("Digite o número da opção desejada: ")
     if opcao == "1":
@@ -72,9 +77,9 @@ while  True:
     elif opcao == "2":
         opcao2(dados)
     elif opcao == "3":
-        opcao3()
+        opcao3(dados)
     elif opcao == "4":
         print("Tchauuuuuu!")
         break
     else:
-        print("Opção Invalida")
+        print("Opção Invalida, digite uma opção valida: ")
