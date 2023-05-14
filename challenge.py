@@ -9,65 +9,73 @@ def opcao1():
     a = int(input("Digite o número do Reciclador: "))
     b = str(input("Digite a rua do Reciclador: "))
     c = str(input("Digite a cidade: "))
-    print("## Reciclador registrado ##")
+    print("#######################")
+    print("Reciclador registrado")
+    print("#######################")
     dados=[a,c,b]
     
 
 def opcao2(dados):
-    
-    import requests
-    
-    a,b,c = dados
-    print("Você selecionou a opção 2.")
-    print("Buscando reciclador...")
+    if dados:
+        import requests
+        
+        a,b,c = dados
+        print("Você selecionou a opção 2.")
+        print("Buscando reciclador...")
 
-    # URL da API do OpenStreetMap para obter as coordenadas geográficas a partir do endereço
-    url = 'https://nominatim.openstreetmap.org/search?q={b},{c}&format=json&limit=1'
+        # URL da API do OpenStreetMap para obter as coordenadas geográficas a partir do endereço
+        url = 'https://nominatim.openstreetmap.org/search?q={b},{c}&format=json&limit=1'
 
-    # Faz uma requisição GET para a URL definida acima, com um timeout de 10 segundos para receber a resposta
-    response = requests.get(url, timeout=(None, 10))
+        # Faz uma requisição GET para a URL definida acima, com um timeout de 10 segundos para receber a resposta
+        response = requests.get(url, timeout=(None, 10))
 
-    # Biblioteca para geolocalização (conversão de endereços em coordenadas)
-    from geopy.geocoders import Nominatim
+        # Biblioteca para geolocalização (conversão de endereços em coordenadas)
+        from geopy.geocoders import Nominatim
 
-    # Biblioteca para plotar os pontos no mapa
-    import matplotlib.pyplot as plt
+        # Biblioteca para plotar os pontos no mapa
+        import matplotlib.pyplot as plt
 
-    # Cria um objeto geolocator com um user_agent personalizado para usar a API do OpenStreetMap
-    geolocator = Nominatim(user_agent="my_app")
+        # Cria um objeto geolocator com um user_agent personalizado para usar a API do OpenStreetMap
+        geolocator = Nominatim(user_agent="my_app")
 
-    # Cria uma lista com as localizações a serem buscadas
-    locations = [f"{b},{c},"]
+        # Cria uma lista com as localizações a serem buscadas
+        locations = [f"{b},{c},"]
 
-    # Cria uma lista vazia para guardar as coordenadas geográficas de cada localização
-    coordinates = []
+        # Cria uma lista vazia para guardar as coordenadas geográficas de cada localização
+        coordinates = []
 
-    # Loop para obter as coordenadas geográficas de cada localização usando o objeto geolocator e a API do OpenStreetMap
-    for location in locations:
-        loc = geolocator.geocode(location)
-        coordinates.append((loc.latitude, loc.longitude))
+        # Loop para obter as coordenadas geográficas de cada localização usando o objeto geolocator e a API do OpenStreetMap
+        for location in locations:
+            loc = geolocator.geocode(location)
+            coordinates.append((loc.latitude, loc.longitude))
 
-    # Cria um gráfico de dispersão com as coordenadas geográficas obtidas acima
-    plt.scatter([coord[1] for coord in coordinates], [coord[0] for coord in coordinates]) 
-    plt.xlabel("Longitude")
-    plt.ylabel("Latitude")
-    plt.title("Locais em São Paulo")
-    plt.show()
+        # Cria um gráfico de dispersão com as coordenadas geográficas obtidas acima
+        plt.scatter([coord[1] for coord in coordinates], [coord[0] for coord in coordinates]) 
+        plt.xlabel("Longitude")
+        plt.ylabel("Latitude")
+        plt.title("Locais em São Paulo")
+        plt.show()
+    else:
+        print("!!Nenhum reciclador registrado.!!")
 
 def opcao3(dados):
    
     if dados:
-        a,b,c= dados
-        opcao3(a,b,c)
+        a,b,c=dados
+        print("################################")
+        print(f"NUMERO DO RECICLADOR: {a}")
+        print(f"RUA DO RECICLADOR: {b}")
+        print(f"CIDADE DO RECICLADOR: {c}") 
+        print("################################")      
     else:
-        print("Nenhum reciclador registrado.")
+        print("!!Nenhum reciclador registrado.!!")
 
 while  True:
     print("_____________________________________")
     print("Selecione uma opção:")
     print("1. Registrar um reciclador")
     print("2. Localizar o reciclador registrado")
-    print("3. Exibir o log de opções escolhihas")
+    print("3. Exibir os dados do reciclador")
     print("4. Sair")
     print("_____________________________________")
 
