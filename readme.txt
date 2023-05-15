@@ -4,8 +4,9 @@ Lucas Vinicius de Almeida Brigida RM99094 / Fr3die
 Leandro Ferreira De Morais RM99064 / Lmorais04
 Gustavo Bianchi Velonisqui dos Santos RM98534 / gbianchi07
 
-*Processo para Linux
 *Para voce iniciar o codigo, voce precisa executar os seguintes comandos
+
+*Processo para Linux
 
 1 - apt install pip
 2 - acesse o diretorio onde está o codigo e seu arquivo
