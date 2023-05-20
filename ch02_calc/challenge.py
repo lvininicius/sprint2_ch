@@ -1,3 +1,5 @@
+#executar a instalação do modulo "scipy" atraves do power shell
+#executar a instação do mudolo "numpy" atraves do power shell
 import numpy as np
 from scipy.optimize import minimize
 
