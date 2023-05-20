@@ -1,0 +1,324 @@
+body{
+    background-color: #6daf64;
+}
+
+/*Menu*/
+
+header{
+    background-color: #4267B2;
+    width: 99%;
+    height: 65px;
+    border: #4267B2 solid 7px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+#perfilPrincipal{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 100px;
+}
+
+/*header nav{
+    
+}*/
+
+header nav ul{
+    text-align: center;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 10px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+header nav ul li a:hover{
+    color: gray;
+}
+
+.carrinho:hover{
+    background-color: gray;
+    border-color: gray;
+}
+
+/*Container - Corpo*/
+
+.container{
+    background-color: #4267B2;
+    width: 99%;
+    height: auto;
+    padding: 7px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/*SlideShow*/
+
+.slideshow{
+    position:relative;
+    left: 25%;
+    max-width: 70%;
+}
+
+.slideshow img{
+    border-radius: 10px;
+    width: 70%;
+    height: 400px;
+}
+
+/*Menu Pagina*/
+
+.menu-catalago{
+    position:relative;
+    background-color: #7A4E48;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    max-width: 100%;
+}
+
+.menu-catalago ul{
+    top: 9px;
+    left: 30%;
+    position: relative;
+    max-width: 60%;
+}
+
+.menu-catalago ul li{
+    display: inline-flex;
+    padding: 8px;
+}
+
+.menu-catalago ul li a{
+   text-decoration: none;
+   color: whitesmoke;
+   font-weight: bold;
+   font-size: 16px;
+}
+
+.menu-catalago ul li a:hover{
+    color: rgb(212, 212, 212);
+}
+
+/*Pagina*/
+
+.catalago{
+    background-color: #d1c6c6;
+    border: #d1c6c6 solid 7px;
+    width: 99%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 0px 0px 10px 10px;
+    
+}
+
+.catalago table tbody{
+    display: inline-flex;
+}
+
+.catalago table tbody tr{
+    padding: 10px;
+}
+
+.catalago table tbody tr td{
+    display: flex;
+    flex-direction:column;
+    border: rgb(172, 170, 170) solid 4px;
+    background-color: rgb(172, 170, 170);
+    padding: 2px;
+}
+
+.nome{
+    color: aqua;
+}
+
+.preco{
+    color: #7A4E48;
+}
+
+.icon{
+    width: 140px;
+    height: 140px;
+}
+
+/*Footer*/
+
+footer{
+    padding: 15px;
+    display:inline-flex;
+}
+
+footer div{
+    position: absolute;
+    right: 20px;
+    display:inline-flex;
+}
+
+footer div p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer div a{
+    padding: 10px;
+}
+
+footer div a img{
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+footer div a img:hover{
+    background-color: whitesmoke;
+}
+
+/*Login page*/
+
+#logo1{
+    margin-top: 100px;
+    width: 190px;
+    justify-content: center;
+
+
+}
+
+.login{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* adicionado */
+    text-align: center;
+    margin: 0 auto; /* adicionado */
+    width: 70%; /* alterado */
+    max-width: 698px; /* adicionado */
+    height: 790px;
+    background: rgb(255, 250, 250);
+    border-radius: 10px;
+    border-color: #d1c6c6;
+    border-width: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 10px 6px black;
+    left: 15%;
+}
+
+#entrar{
+    justify-content: center ;
+    margin-bottom: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+#enviar{
+    height: 30px;
+    width: 130px;
+    background-color: green;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    left: 21%;
+    font-weight: bold;
+}
+
+#enviar:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+/*Sobre nós*/
+
+.descricao{
+    border-radius: 10px;
+    width: auto;
+    overflow: auto;
+    background-color: #7A4E48 ;
+    margin-bottom:30%;
+}
+
+@font-face {
+    font-family: "descri";
+    src: url("./fontes/Concert_One/ConcertOne-Regular.ttf");
+}
+
+.descricao p{
+    text-align: center;
+    font-family: "descri", sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+/*Servicos*/
+
+.servicosUl img{
+    width: 140px;
+    height: 140px;
+}
+.servicosUl p{
+    font-family: "descri", sans-serif;
+    color: white;
+}
+.servicosUl li{
+    font-family: "descri", sans-serif;
+    color: rgb(255, 255, 255);
+}
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* adicionado */
+    text-align: center;
+    margin: 0 auto; /* adicionado */
+    width: 70%; /* alterado */
+    max-width: 698px; /* adicionado */
+    height: 790px;
+    background: rgb(255, 250, 250);
+    border-radius: 10px;
+    border-color: #d1c6c6;
+    border-width: 10px;
+    margin-bottom: 50px;
+    left: 15%;
+  }
+  
+  form h1 {
+    margin-bottom: 20px;
+  }
+  
+  form p {
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  form label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  form textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  form input[type="submit"] {
+    width: auto;
+    padding: 8px 20px;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+   <head>
+      <meta charset="UTF-8">
+      <title>Contato</title>
+      <link rel="stylesheet" type="text/css" href="estilo.css">
+   </head>
+   <body>
+      <header>
+         <nav>
+            <ul>
+               <li><a href="home.html">Início</a></li>
+               <li><a href="servicos.html">Serviços</a></li>
+               <li><a href="login.html">Login</a></li>
+               <li><a href="formulario.html">Contato</a></li>
+            </ul>
+         </nav>
+         <img id="perfilPrincipal" src="./imagens/reciclar-logo.png">
+      </header>
+      <main class="container">
+      <form name="form">
+         <h1>contato</h1>
+         <p id="nome">
+            <label for="name" id="name">Nome:</label>
+            <input placeholder="digite seu nome" name="name" required="required">
+        </p>
+ 
+         <p class="telefone">
+             <label for="telefone" id="telefone">Telefone:</label>
+             <input placeholder="digite seu telefone" name="telefone" required="required">
+         </p>
+ 
+         <p class="email">
+             <label for="email" id="emailid">Email:</label>
+             <input placeholder="digite seu email" name="email" required="required">
+         </p>
+         
+         <p>
+             <textarea placeholder="deixe sua mensagem"></textarea>
+         </p>
+ 
+ 
+         <input type="submit" onclick="enviar" value="enviar"/>
+ 
+     </form>
+   </main>
+      <footer>
+         <p>2023 - Todos os direitos reservados</p>
+         <div>
+            <p>Contatos: </p>
+            <a href="#"><img class="avatar" src="./imagens/avatar.png" alt="logo"></a>
+            <a href="#"><img src="./imagens/instagram.png"></a>
+	         <a href="#"><img src="./imagens/tik-tok.png"></a>
+         </div>
+      </footer>
+      <script src="script.js"></script>
+   </body>
+</html>
