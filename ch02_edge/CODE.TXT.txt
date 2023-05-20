@@ -1,0 +1,37 @@
+// C++ code
+//(Trigger = emite um pulso, Echo =  recebe o pulso)
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(5, OUTPUT);//Led vermelho
+  pinMode(6, OUTPUT);//Led amarelo
+  pinMode(7, OUTPUT);//Led verde
+  pinMode(11, OUTPUT);//Trigger
+  pinMode(10, INPUT);//Echo
+}
+void loop(){
+float distancia, vol;//Var de distancia e volume
+  digitalWrite(11, LOW);//Emissão de pulso pelo trigger
+  delayMicroseconds(2);
+  digitalWrite(11, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(11, LOW);
+	distancia = pulseIn(10, HIGH)/58.0;//Tempo que leva para o pulso voltar ao sensor
+  vol = 300 - distancia;//Calcula volume (ambiente com 3m de altura)
+  Serial.print("volume: ");
+  Serial.println(vol);//Verifica se o volume esta sendo identificado corretamente
+   if (vol <= 150){
+    digitalWrite(7, HIGH);//Menos da metade da capacidade-> Led verde
+    digitalWrite(6, LOW);
+    digitalWrite(5, LOW);
+  }else if (vol <= 250){
+    digitalWrite(7, LOW);
+    digitalWrite(6, HIGH);//Metade até 75% da capacidade-> Led amarelo
+    digitalWrite(5, LOW);
+  }else{
+    digitalWrite(7, LOW);
+    digitalWrite(6, LOW);//Mais de 75% da capacidade-> Led vermelho
+    digitalWrite(5, HIGH);
+  }
+  delay(500);
+}
